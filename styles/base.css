@@ -1,0 +1,74 @@
+/* ========================================
+   BASE CSS - Variables y Reset
+   1rem = 10px (62.5% de 16px = 10px)
+======================================== */
+
+/* ========================================
+   Variables de Colores
+======================================== */
+:root {
+  /* Fondos */
+  --colorTargetFondo: #eedfc0;
+  --colorTarget: #f8f7e3;
+
+  /* Botones */
+  --colorButton: #46a330;
+  --colorButtonDegradado: #7bc224;
+
+  /* Textos */
+  --colorTextTitle: #f3d645;
+  --colorTextBorde: #1d420f;
+  --colorTextContenido: #513015;
+  --colorTextWhite: #e9f5e6;
+
+  /* Avatares */
+  --colorAvatarGray: #9ca3af;
+  --colorAvatarGreen: #46a330;
+  --colorAvatarBrown: #a67c52;
+
+  /* Color tipos de reclajes */
+  --colorTipoPapel: #3299e3;
+  --colorTipoPlastico: #4dc269;
+  --colorTipoMetal: #929aa0;
+  --colorTipoOrganico: #d27c2f;
+  --colorTipoVidrio: #64cde2;
+  --colorTipoOtros: #9471e5;
+}
+
+/* ========================================
+     Reset base para todos los elementos
+  ======================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* ========================================
+     Configuración del rem: 10px = 1rem
+  ======================================== */
+html {
+  font-size: 62.5%; /* 16px * 0.625 = 10px */
+}
+
+/* ========================================
+     Body base
+  ======================================== */
+body {
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  background: url(../img/frame-5.png) center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: visible;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 90%;
+  margin: 0 auto;
+}

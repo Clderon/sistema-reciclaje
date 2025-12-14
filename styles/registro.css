@@ -1,0 +1,429 @@
+/* ========================================
+   COMPONENTE: Registro (BEM)
+   Mobile First: 375x667
+   Block: .registro
+   Elements: .registro__header, .registro__title, .registro__content,
+             .registro__scan, .registro__counter
+   Modifiers: .registro__counter-btn--minus, .registro__counter-btn--plus
+   
+   Nota: El botón de enviar usa el componente Button (buttom.css)
+======================================== */
+
+:root {
+  /* Fondos */
+  --colorTargetFondo: #eedfc0;
+  --colorTarget: #f8f7e3;
+
+  /* Botones */
+  --colorButton: #46a330;
+  --colorButtonDegradado: #7bc224;
+
+  /* Textos */
+  --colorTextTitle: #f3d645;
+  --colorTextBorde: #1d420f;
+  --colorTextContenido: #513015;
+  --colorTextWhite: #e9f5e6;
+
+  /* Avatares */
+  --colorAvatarGray: #9ca3af;
+  --colorAvatarGreen: #46a330;
+  --colorAvatarBrown: #a67c52;
+}
+
+/* Block: Registro Card (Mobile 375x667) */
+.registro {
+  background-color: var(--colorTarget);
+  border: 3px solid var(--colorTextBorde);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  width: 100%;
+  max-width: 33.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Block: Header Banner (Mobile 375x667) */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 37.5rem;
+  min-height: 8rem;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+/* ========================================
+   Element: Decoraciones (árboles)
+======================================== */
+.header__decoration {
+  position: absolute;
+  bottom: 0;
+  width: 6rem;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+.header__decoration--left {
+  left: 0;
+  justify-content: flex-start;
+}
+
+.header__decoration--right {
+  right: 0;
+  justify-content: flex-end;
+}
+
+.header__tree {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+/* ========================================
+   Element: Contenido central
+======================================== */
+.header__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  padding: 0 6rem;
+}
+
+.header__title {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #1d420f;
+  -webkit-text-stroke: 1.6px var(--colorTextWhite);
+  text-shadow: 1px 1px 0 var(--colorTextBorde),
+    -1px -1px 0 var(--colorTextBorde), 1px -1px 0 var(--colorTextBorde),
+    -1px 1px 0 var(--colorTextBorde);
+  line-height: 1.1;
+  margin-bottom: 0.3rem;
+  width: max-content;
+}
+
+.header__subtitle {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--colorTextTitle);
+  -webkit-text-stroke: 0.5px var(--colorTextBorde);
+  text-shadow: 2px 2px 0 var(--colorTextBorde),
+    -1px -1px 0 var(--colorTextBorde), 1px -1px 0 var(--colorTextBorde),
+    -1px 1px 0 var(--colorTextBorde);
+  font-style: italic;
+  line-height: 1.2;
+  width: max-content;
+}
+
+/* ========================================
+   Responsive: Móvil pequeño
+======================================== */
+@media (max-width: 360px) {
+  .header {
+    min-height: 7rem;
+  }
+
+  .header__decoration {
+    width: 5rem;
+  }
+
+  .header__content {
+    padding: 0 5rem;
+  }
+
+  .header__title {
+    font-size: 2.4rem;
+  }
+
+  .header__subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+/* ========================================
+   Element: Header
+======================================== */
+.registro__header {
+  background-color: var(--colorTargetFondo);
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+}
+
+.registro__title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--colorTextContenido);
+}
+
+/* ========================================
+   Element: Contenido
+======================================== */
+.registro__content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ========================================
+   Element: Categorías de reciclaje
+======================================== */
+.registro__categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.registro__category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.8rem 0.5rem;
+  border: 2px solid var(--colorTextBorde);
+  border-radius: 1.5rem;
+  background: var(--colorTipoPapel);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  height: 10rem;
+  width: 10rem;
+}
+
+.registro__category:nth-child(2) {
+  background: var(--colorTipoPlastico);
+}
+
+.registro__category:nth-child(3) {
+  background: var(--colorTipoMetal);
+}
+
+.registro__category:nth-child(4) {
+  background: var(--colorTipoVidrio);
+}
+
+.registro__category:nth-child(5) {
+  background: var(--colorTipoOrganico);
+}
+
+.registro__category:nth-child(6) {
+  background: var(--colorTipoOtros);
+}
+
+/* Fondo de lianas (compartido) */
+.registro__category-bg {
+  position: absolute;
+  top: -5.1rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../img/fondo-item-hd.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.registro__category:active {
+  transform: scale(0.95);
+}
+
+/* Modifier: Categoría activa/seleccionada */
+.registro__category--active {
+  border-width: 3px;
+  box-shadow: 0 0 10px rgba(70, 163, 48, 0.4);
+}
+
+.registro__category-icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0.3rem;
+}
+
+.registro__category-img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+}
+
+.registro__category-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--colorTextWhite);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  line-height: 1.1;
+}
+
+/* ========================================
+   Element: Botón Escanear (Mobile 375x667)
+======================================== */
+.registro__scan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  width: 100%;
+  height: 9rem;
+  padding: 1rem 1.5rem 1.2rem 1.5rem;
+  background-color: var(--colorTargetFondo);
+  border: 3px solid var(--colorTextBorde);
+  border-radius: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.registro__scan::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../img/fondo-camara.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.registro__scan:active {
+  transform: scale(0.98);
+}
+
+.registro__scan-icon {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.registro__scan-svg {
+  width: 100%;
+  height: 100%;
+  color: var(--colorTextContenido);
+}
+
+.registro__scan-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.registro__scan-label {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--colorTextContenido);
+  line-height: 1.2;
+}
+
+/* ========================================
+   Element: Contador (Mobile 375x667)
+======================================== */
+.registro__counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--colorTargetFondo);
+  gap: 1rem;
+  width: 100%;
+}
+
+.registro__counter-btn {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--colorTarget);
+  border: 3px solid var(--colorTextBorde);
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.registro__counter-btn:active {
+  transform: scale(0.95);
+  background-color: var(--colorTargetFondo);
+}
+
+.registro__counter-icon {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--colorTextContenido);
+  line-height: 1;
+}
+
+.registro__counter-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--colorTextContenido);
+  flex: 1;
+  text-align: center;
+}
+
+/* ========================================
+   Responsive: Móvil pequeño
+======================================== */
+@media (max-width: 360px) {
+  .registro__content {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .registro__scan {
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .registro__scan-label {
+    font-size: 1.5rem;
+  }
+
+  .registro__counter-btn {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .registro__counter-icon {
+    font-size: 2.5rem;
+  }
+
+  .registro__counter-value {
+    font-size: 1.6rem;
+    min-width: 10rem;
+  }
+}

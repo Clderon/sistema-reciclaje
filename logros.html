@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Componentes</title>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/card-ranking.css" />
+    <link rel="stylesheet" href="styles/registro.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+  </head>
+  <body>
+    <!-- Componente Card Ranking con BEM -->
+    <article class="ranking">
+      <!-- Header con título -->
+      <header class="ranking__header">
+        <h1 class="ranking__title">Ranking de la Selva</h1>
+      </header>
+
+      <!-- Tabs de navegación -->
+      <nav class="ranking__tabs">
+        <button class="ranking__tab ranking__tab--active">
+          Ranking Estudiantes
+        </button>
+        <button class="ranking__tab">Ranking Salones</button>
+      </nav>
+
+      <!-- Imagen principal del ranking (árbol con avatares) -->
+      <div class="ranking__image">
+        <img
+          src="img/Fondo-Ranking-HD.png"
+          alt="Ranking de la Selva"
+          class="ranking__image-src"
+        />
+
+        <!-- Contenedor de posiciones -->
+        <div class="ranking__positions">
+          <div class="ranking__position ranking__position--1">
+            <div class="ranking__avatar ranking__avatar--gold">
+              <img
+                src="img/gallito-rocas.png"
+                alt="1er lugar"
+                class="ranking__avatar-img"
+              />
+            </div>
+            <span class="ranking__position-badge">1</span>
+          </div>
+
+          <!-- Posición 2 -->
+          <div class="ranking__position ranking__position--2">
+            <div class="ranking__avatar ranking__avatar--silver">
+              <img
+                src="img/elefante.png"
+                alt="2do lugar"
+                class="ranking__avatar-img"
+              />
+            </div>
+            <span class="ranking__position-badge">2</span>
+          </div>
+
+          <!-- Posición 3 -->
+          <div class="ranking__position ranking__position--3">
+            <div class="ranking__avatar ranking__avatar--bronze">
+              <img
+                src="img/mono.png"
+                alt="3er lugar"
+                class="ranking__avatar-img"
+              />
+            </div>
+            <span class="ranking__position-badge">3</span>
+          </div>
+
+          <!-- Posición 4 -->
+          <div class="ranking__position ranking__position--4">
+            <div class="ranking__avatar">
+              <img
+                src="img/hormiga.png"
+                alt="4to lugar"
+                class="ranking__avatar-img"
+              />
+            </div>
+            <span class="ranking__position-badge">4</span>
+          </div>
+
+          <!-- Posición 5 -->
+          <div class="ranking__position ranking__position--5">
+            <div class="ranking__avatar">
+              <img
+                src="img/user.png"
+                alt="5to lugar"
+                class="ranking__avatar-img"
+              />
+            </div>
+            <span class="ranking__position-badge">5</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de progreso -->
+      <div class="ranking__progress">
+        <span class="ranking__progress-text"
+          >Faltan 120 pts para Sachavaca</span
+        >
+      </div>
+
+      <!-- Sección Rivales Cercanos -->
+      <section class="ranking__rivals">
+        <h2 class="ranking__rivals-title">Rivales Cercanos</h2>
+
+        <div class="ranking__rivals-list">
+          <!-- Rival 1 -->
+          <div class="ranking__rival">
+            <div class="ranking__rival-avatar ranking__rival-avatar--gray">
+              <img
+                src="img/elefante.png"
+                alt="Maria"
+                class="ranking__rival-img"
+              />
+            </div>
+            <span class="ranking__rival-name">4. Maria</span>
+          </div>
+
+          <!-- Rival 2 (Usuario actual) -->
+          <div class="ranking__rival ranking__rival--current">
+            <div class="ranking__rival-avatar ranking__rival-avatar--green">
+              <img src="img/hormiga.png" alt="Tu" class="ranking__rival-img" />
+            </div>
+            <span class="ranking__rival-name">14. Tu</span>
+          </div>
+
+          <!-- Rival 3 -->
+          <div class="ranking__rival">
+            <div class="ranking__rival-avatar ranking__rival-avatar--brown">
+              <img src="img/mono.png" alt="Pedro" class="ranking__rival-img" />
+            </div>
+            <span class="ranking__rival-name">15. Pedro</span>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <!-- Componente Navbar con BEM -->
+    <nav class="navbar navbar--fixed">
+      <a href="./index.html" class="navbar__item navbar__item--active">
+        <img src="img/home.png" alt="Inicio" class="navbar__icon" />
+        <span class="navbar__label">Inicio</span>
+      </a>
+      <a href="#" class="navbar__item">
+        <img src="img/trofeos.png" alt="Logros" class="navbar__icon" />
+        <span class="navbar__label">Logros</span>
+      </a>
+      <a href="#" class="navbar__item">
+        <img src="img/mochila.png" alt="Perfil" class="navbar__icon" />
+        <span class="navbar__label">Perfil</span>
+      </a>
+    </nav>
+     <!-- Scripts -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

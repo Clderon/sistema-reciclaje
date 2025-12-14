@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Componentes</title>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/buttom.css" />
+    <link rel="stylesheet" href="styles/card-ranking.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/registro.css" />
+  </head>
+  <body>
+    <header class="header">
+      <!-- Decoración izquierda (árboles/selva) -->
+      <div class="header__decoration header__decoration--left">
+        <img src="img/tree-left.png" alt="" class="header__tree" />
+      </div>
+
+      <!-- Contenido central -->
+      <div class="header__content">
+        <h1 class="header__title">Tingo Maria</h1>
+        <p class="header__subtitle">A reciclar por la selva!</p>
+      </div>
+
+      <!-- Decoración derecha (árboles/selva) -->
+      <div class="header__decoration header__decoration--right">
+        <img src="img/tree-right.png" alt="" class="header__tree" />
+      </div>
+    </header>
+
+    <div class="registro__categories">
+      <!-- Categoría 1: Papel/Cartón -->
+      <button class="registro__category registro__category--active">
+        <div class="registro__category-bg"></div>
+        <div class="registro__category-icon">
+          <img
+            src="img/papel-carton.png"
+            alt="Papel"
+            class="registro__category-img"
+          />
+        </div>
+        <span class="registro__category-label">Papel/Cartón</span>
+      </button>
+
+      <!-- Categoría 2: Plástico -->
+      <button class="registro__category">
+        <div class="registro__category-bg"></div>
+        <div class="registro__category-icon">
+          <img
+            src="img/botella.png"
+            alt="Plástico"
+            class="registro__category-img"
+          />
+        </div>
+        <span class="registro__category-label">Plástico</span>
+      </button>
+
+      <!-- Categoría 3: Vidrio -->
+      <button class="registro__category">
+        <div class="registro__category-bg"></div>
+        <div class="registro__category-icon">
+          <img
+            src="img/metal.png"
+            alt="Vidrio"
+            class="registro__category-img"
+          />
+        </div>
+        <span class="registro__category-label">Metal</span>
+      </button>
+
+      <!-- Categoría 4: Metal -->
+      <button class="registro__category">
+        <div class="registro__category-bg"></div>
+        <div class="registro__category-icon">
+          <img
+            src="img/vidrio.png"
+            alt="Metal"
+            class="registro__category-img"
+          />
+        </div>
+        <span class="registro__category-label">Vidrio</span>
+      </button>
+
+      <!-- Categoría 5: Orgánico -->
+      <button class="registro__category">
+        <div class="registro__category-bg"></div>
+        <div class="registro__category-icon">
+          <img
+            src="img/organico.png"
+            alt="Orgánico"
+            class="registro__category-img"
+          />
+        </div>
+        <span class="registro__category-label">Orgánico</span>
+      </button>
+
+      <!-- Categoría 6: Electrónico -->
+      <button class="registro__category">
+        <div class="registro__category-bg"></div>
+        <div class="registro__category-icon">
+          <img
+            src="img/otros.png"
+            alt="Electrónico"
+            class="registro__category-img"
+          />
+        </div>
+        <span class="registro__category-label">Otros</span>
+      </button>
+    </div>
+
+    <article style="margin: 0 auto; margin-top: 2rem" class="registro">
+      <!-- Header con título -->
+      <header class="registro__header">
+        <h1 class="registro__title">Registro</h1>
+      </header>
+
+      <!-- Contenido principal -->
+      <div class="registro__content">
+        <!-- Botón de escanear evidencia -->
+        <button class="registro__scan">
+          <div class="registro__scan-icon">
+            <svg
+              class="registro__scan-svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M23 19C23 19.5304 22.7893 20.0391 22.4142 20.4142C22.0391 20.7893 21.5304 21 21 21H3C2.46957 21 1.96086 20.7893 1.58579 20.4142C1.21071 20.0391 1 19.5304 1 19V8C1 7.46957 1.21071 6.96086 1.58579 6.58579C1.96086 6.21071 2.46957 6 3 6H7L9 3H15L17 6H21C21.5304 6 22.0391 6.21071 22.4142 6.58579C22.7893 6.96086 23 7.46957 23 8V19Z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle
+                cx="12"
+                cy="13"
+                r="4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="registro__scan-text">
+            <span class="registro__scan-label">¡ESCANEAR</span>
+            <span class="registro__scan-label">EVIDENCIA!</span>
+          </div>
+        </button>
+
+        <!-- Contador de cantidad -->
+        <div class="registro__counter">
+          <button class="registro__counter-btn registro__counter-btn--minus">
+            <span class="registro__counter-icon">−</span>
+          </button>
+          <span class="registro__counter-value">Cantidad: 5</span>
+          <button class="registro__counter-btn registro__counter-btn--plus">
+            <span class="registro__counter-icon">+</span>
+          </button>
+        </div>
+
+        <!-- Botón de enviar (reutilizando componente Button) -->
+        <button class="button button--primary">
+          <span class="button__text">Enviar Mi Reciclaje</span>
+          <span class="button__vines"></span>
+        </button>
+      </div>
+    </article>
+
+    <!-- Componente Navbar con BEM -->
+    <nav class="navbar navbar--fixed">
+      <a href="./index.html" class="navbar__item navbar__item--active">
+        <img src="img/home.png" alt="Inicio" class="navbar__icon" />
+        <span class="navbar__label">Inicio</span>
+      </a>
+      <a href="./logros.html" class="navbar__item">
+        <img src="img/trofeos.png" alt="Logros" class="navbar__icon" />
+        <span class="navbar__label">Logros</span>
+      </a>
+      <a href="#" class="navbar__item">
+        <img src="img/mochila.png" alt="Perfil" class="navbar__icon" />
+        <span class="navbar__label">Perfil</span>
+      </a>
+    </nav>
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

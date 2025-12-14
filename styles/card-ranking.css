@@ -1,0 +1,364 @@
+/* ========================================
+   COMPONENTE: Card Ranking (BEM)
+   Block: .ranking
+   Elements: .ranking__header, .ranking__title, .ranking__tabs, 
+             .ranking__tab, .ranking__image, .ranking__progress,
+             .ranking__rivals, .ranking__rival
+   Modifiers: .ranking__tab--active, .ranking__rival--current,
+              .ranking__rival-avatar--gray, --green, --brown
+======================================== */
+
+/* Block: Ranking Card */
+.ranking {
+  background-color: var(--colorTarget);
+  border: 3px solid var(--colorTextBorde);
+  border-radius: 2rem;
+  overflow: hidden;
+  max-width: 40rem;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+     Element: Header
+  ======================================== */
+.ranking__header {
+  background-color: var(--colorTargetFondo);
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.ranking__title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--colorTextContenido);
+}
+
+/* ========================================
+     Element: Tabs
+  ======================================== */
+.ranking__tabs {
+  display: flex;
+  border-top: 3px solid var(--colorTextBorde);
+}
+
+.ranking__tab {
+  flex: 1;
+  font-size: 1.4rem;
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  font-family: inherit;
+  background-color: var(--colorTarget);
+  color: var(--colorTextContenido);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ranking__tab:last-child {
+  border-right: none;
+  border-left: 3px solid var(--colorTextBorde);
+  border-bottom: 3px solid var(--colorTextBorde);
+  border-bottom-left-radius: 1rem;
+}
+
+.ranking__tab:hover {
+  background-color: var(--colorTargetFondo);
+}
+
+/* Modifier: Tab Activo */
+.ranking__tab--active {
+  background: linear-gradient(
+    to bottom,
+    var(--colorButtonDegradado) 0%,
+    var(--colorButton) 100%
+  );
+  color: var(--colorTextWhite);
+  border-bottom-right-radius: 1rem;
+  border-bottom: 3px solid var(--colorTextBorde);
+  border-right: 3px solid var(--colorTextBorde);
+}
+
+.ranking__tree-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Contenedor de posiciones (sobre el árbol) */
+.ranking__positions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+/* Avatar en el árbol */
+.ranking__avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ranking__avatar-img {
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Badge de posición */
+.ranking__position-badge {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    var(--colorButtonDegradado) 0%,
+    var(--colorButton) 100%
+  );
+
+  color: var(--colorTextWhite);
+  font-size: 0.7rem;
+  font-weight: 900;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  border: 2px solid var(--colorTextBorde);
+  min-width: 1rem;
+  text-align: center;
+}
+
+.ranking__position--1 {
+  position: absolute;
+  top: 5%;
+  left: 53%;
+}
+
+.ranking__position--2 {
+  position: absolute;
+  top: 25%;
+  left: 23%;
+}
+
+.ranking__avatar--silver {
+  width: 5rem;
+  height: 5rem;
+}
+
+.ranking__position--3 {
+  position: absolute;
+  top: 31%;
+  left: 61%;
+}
+
+.ranking__avatar--bronze {
+  width: 6.5rem;
+  height: 6.5rem;
+}
+
+.ranking__position--4 {
+  position: absolute;
+  top: 53%;
+  left: 51%;
+}
+
+.ranking__position--4 .ranking__avatar {
+  width: 6rem;
+  height: 6rem;
+}
+
+.ranking__position--5 {
+  position: absolute;
+  top: 62%;
+  left: 20%;
+}
+
+.ranking__position--5 .ranking__avatar {
+  width: 6rem;
+  height: 6rem;
+}
+
+/* ========================================
+     Element: Imagen Principal
+  ======================================== */
+.ranking__image {
+  width: 100%;
+  background-color: var(--colorTarget);
+  position: relative;
+}
+
+.ranking__image-src {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+/* ========================================
+     Element: Barra de Progreso
+  ======================================== */
+.ranking__progress {
+  padding: 1rem 2rem;
+  text-align: center;
+  border: 3px solid var(--colorTextBorde);
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 10rem;
+  height: 2rem;
+  position: relative;
+  top: -5rem;
+}
+
+.ranking__progress:after {
+  content: "";
+  position: absolute;
+  width: 12%;
+  background-color: red;
+  top: 0.5px;
+  left: calc(100% - 271px);
+  border-radius: 1rem;
+  height: 99%;
+  background: linear-gradient(to bottom, #2a774d 0%, #4d944e 60%, #98c371 100%);
+  z-index: 6;
+}
+
+.ranking__progress-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  background-color: #d4bc98;
+  left: calc(100% - 272px);
+  border-radius: 1rem;
+}
+
+/* ========================================
+     Element: Sección Rivales
+  ======================================== */
+.ranking__rivals {
+  padding: 0 2rem 2rem 2rem;
+  background-color: var(--colorTarget);
+}
+
+.ranking__rivals-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--colorTextContenido);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.ranking__rivals-list {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* ========================================
+     Element: Rival Card
+  ======================================== */
+.ranking__rival {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--colorTarget);
+  border: 2px solid var(--colorTextBorde);
+  border-radius: 1rem;
+  min-width: 9rem;
+  height: 11rem;
+  transition: transform 0.3s ease;
+  background-color: var(--colorTargetFondo);
+}
+
+.ranking__rival:hover {
+  transform: scale(1.05);
+}
+
+/* Modifier: Rival actual (usuario) */
+.ranking__rival--current {
+  border-color: var(--colorButton);
+  border-width: 3px;
+  box-shadow: 0 0 10px rgba(70, 163, 48, 0.3);
+}
+
+/* ========================================
+     Element: Avatar del Rival
+  ======================================== */
+.ranking__rival-avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+}
+
+.ranking__rival-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Modifier: Avatar Gris */
+.ranking__rival-avatar--gray {
+  background-color: var(--colorAvatarGray);
+  border-color: #6b7280;
+}
+
+/* Modifier: Avatar Verde (usuario actual) */
+.ranking__rival-avatar--green {
+  background-color: var(--colorButtonDegradado);
+  border-color: var(--colorButton);
+}
+
+/* ========================================
+     Element: Nombre del Rival
+  ======================================== */
+.ranking__rival-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--colorTextContenido);
+  text-align: center;
+}
+
+/* ========================================
+     Modifier: Card con scroll (para listas largas)
+  ======================================== */
+.ranking--scrollable .ranking__image {
+  max-height: 40rem;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* ========================================
+     Responsive: Móvil pequeño
+  ======================================== */
+@media (max-width: 360px) {
+  .ranking__rivals-list {
+    gap: 0.8rem;
+  }
+
+  .ranking__rival {
+    min-width: 7.5rem;
+    padding: 0.8rem;
+  }
+
+  .ranking__rival-avatar {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .ranking__rival-name {
+    font-size: 1.1rem;
+  }
+}
