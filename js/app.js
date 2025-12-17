@@ -109,16 +109,32 @@ function navigateToSection(sectionId) {
   ======================================== */
 function initRankingTabs() {
   const tabs = document.querySelectorAll(".ranking__tab");
+  const contents = document.querySelectorAll(".ranking__content");
 
-  if (!tabs.length) return;
+  if (!tabs.length || !contents.length) return;
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
-      // Remover activo de todos
+      const targetTab = tab.getAttribute("data-tab");
+
+      // Remover activo de todos los tabs
       tabs.forEach((t) => t.classList.remove("ranking__tab--active"));
 
-      // Agregar activo al clickeado
+      // Remover activo de todos los contenidos
+      contents.forEach((content) => {
+        content.classList.remove("ranking__content--active");
+      });
+
+      // Agregar activo al tab clickeado
       tab.classList.add("ranking__tab--active");
+
+      // Mostrar el contenido correspondiente
+      const targetContent = document.querySelector(
+        `.ranking__content[data-content="${targetTab}"]`
+      );
+      if (targetContent) {
+        targetContent.classList.add("ranking__content--active");
+      }
     });
   });
 }

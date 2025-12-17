@@ -384,3 +384,99 @@
     height: 5rem;
   }
 }
+
+/* ========================================
+   Responsive: Tablet (481px - 768px)
+======================================== */
+@media (min-width: 481px) and (max-width: 768px) {
+  .card-info {
+    max-width: 45rem;
+  }
+
+  .card-info__header-title {
+    font-size: 2.4rem;
+  }
+
+  .card-info__avatar {
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .card-info__username {
+    font-size: 2.4rem;
+  }
+
+  .card-info__level {
+    font-size: 1.6rem;
+  }
+
+  .card-info__stats {
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .card-info__stat {
+    padding: 1.2rem 1rem;
+  }
+
+  .card-info__stat-label {
+    font-size: 1.2rem;
+  }
+
+  .card-info__stat-value {
+    font-size: 2rem;
+  }
+
+  .card-info__badge-item {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+}
+
+/* ========================================
+   Responsive: Desktop (769px+)
+======================================== */
+@media (min-width: 769px) {
+  .card-info {
+    max-width: 55rem;
+  }
+
+  .card-info__header-title {
+    font-size: 2.8rem;
+  }
+
+  .card-info__avatar {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .card-info__username {
+    font-size: 2.8rem;
+  }
+
+  .card-info__level {
+    font-size: 1.8rem;
+  }
+
+  .card-info__stats {
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .card-info__stat {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .card-info__stat-label {
+    font-size: 1.4rem;
+  }
+
+  .card-info__stat-value {
+    font-size: 2.4rem;
+  }
+
+  .card-info__badge-item {
+    width: 7rem;
+    height: 7rem;
+  }
+}

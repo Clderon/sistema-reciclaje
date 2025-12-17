@@ -1,0 +1,170 @@
+<!-- Estilos necesarios para que el componente funcione independientemente -->
+<style>
+/* ========================================
+    Reset básico y configuración
+======================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+    background-color: #f5f5f5;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    min-height: 100vh;
+}
+
+/* ========================================
+    Variables CSS necesarias para el botón
+======================================== */
+:root {
+    /* Botones */
+    --colorButton: #46a330;
+    --colorButtonDegradado: #7bc224;
+
+    /* Textos */
+    --colorTextBorde: #1d420f;
+    --colorTextContenido: #513015;
+    --colorTextWhite: #e9f5e6;
+
+    /* Fondos */
+    --colorTarget: #f8f7e3;
+    --colorTargetFondo: #eedfc0;
+
+    /* Sombras */
+    --shadowLight: rgba(255, 255, 255, 0.3);
+    --shadowDarkStrong: rgba(0, 0, 0, 0.2);
+    --shadowDarkExtra: rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+    Estilos de demostración
+======================================== */
+.demo-container {
+    background: white;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 50rem;
+}
+
+.demo-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.demo-section {
+    margin-bottom: 3rem;
+}
+
+.demo-section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+.demo-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+</style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Componente Botón - Demo</title>
+  
+  <!-- Importar fuente Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+
+  <!-- Importar el componente de botón -->
+  <link rel="stylesheet" href="styles/buttom.css" />
+</head>
+<body>
+  <div class="demo-container">
+    <h1 class="demo-title">Componente Botón - Demo</h1>
+
+    <!-- Botón Primary -->
+    <div class="demo-section">
+      <h2 class="demo-section-title">Botón Primary (Principal)</h2>
+      <div class="demo-buttons">
+        <button class="button button--primary">
+          <span class="button__text">Enviar Mi Reciclaje</span>
+          <span class="button__vines"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Botón Secondary -->
+    <div class="demo-section">
+      <h2 class="demo-section-title">Botón Secondary (Secundario)</h2>
+      <div class="demo-buttons">
+        <button class="button button--secondary">
+          <span class="button__text">Cancelar</span>
+          <span class="button__vines"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Botón sin lianas -->
+    <div class="demo-section">
+      <h2 class="demo-section-title">Botón sin Lianas Decorativas</h2>
+      <div class="demo-buttons">
+        <button class="button button--primary button--no-vines">
+          <span class="button__text">Botón Simple</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Botón Disabled -->
+    <div class="demo-section">
+      <h2 class="demo-section-title">Botón Deshabilitado</h2>
+      <div class="demo-buttons">
+        <button class="button button--primary button--disabled">
+          <span class="button__text">No Disponible</span>
+          <span class="button__vines"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Múltiples botones -->
+    <div class="demo-section">
+      <h2 class="demo-section-title">Múltiples Botones</h2>
+      <div class="demo-buttons">
+        <button class="button button--primary">
+          <span class="button__text">Aceptar</span>
+          <span class="button__vines"></span>
+        </button>
+        <button class="button button--secondary">
+          <span class="button__text">Rechazar</span>
+          <span class="button__vines"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

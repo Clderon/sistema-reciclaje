@@ -428,7 +428,7 @@
 }
 
 /* ========================================
-   Responsive
+   Responsive: Mobile (hasta 480px)
 ======================================== */
 @media (max-width: 480px) {
   .perfil__info {
@@ -443,5 +443,81 @@
 
   .perfil__avatar-wrapper {
     left: 0;
+  }
+}
+
+/* ========================================
+   Responsive: Tablet (481px - 768px)
+======================================== */
+@media (min-width: 481px) and (max-width: 768px) {
+  .perfil__card {
+    max-width: 50rem;
+  }
+
+  .perfil__title {
+    font-size: 2.4rem;
+  }
+
+  .perfil__info {
+    width: 38rem;
+  }
+
+  .perfil__name-card {
+    width: 24rem;
+    left: 12rem;
+  }
+
+  .perfil__name-card-inner {
+    width: 23rem;
+  }
+
+  .perfil__badges-title {
+    font-size: 2rem;
+  }
+
+  .perfil__button-text {
+    font-size: 2.2rem;
+  }
+}
+
+/* ========================================
+   Responsive: Desktop (769px+)
+======================================== */
+@media (min-width: 769px) {
+  .perfil__card {
+    max-width: 60rem;
+  }
+
+  .perfil__title {
+    font-size: 2.8rem;
+  }
+
+  .perfil__info {
+    width: 42rem;
+  }
+
+  .perfil__name-card {
+    width: 26rem;
+    left: 13rem;
+  }
+
+  .perfil__name-card-inner {
+    width: 25rem;
+  }
+
+  .perfil__name {
+    font-size: 1.8rem;
+  }
+
+  .perfil__level {
+    font-size: 1.6rem;
+  }
+
+  .perfil__badges-title {
+    font-size: 2.2rem;
+  }
+
+  .perfil__button-text {
+    font-size: 2.4rem;
   }
 }

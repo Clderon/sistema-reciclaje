@@ -20,14 +20,16 @@
 
       <!-- Tabs de navegación -->
       <nav class="ranking__tabs">
-        <button class="ranking__tab ranking__tab--active">
+        <button class="ranking__tab ranking__tab--active" data-tab="estudiantes">
           Ranking Estudiantes
         </button>
-        <button class="ranking__tab">Ranking Salones</button>
+        <button class="ranking__tab" data-tab="salones">Ranking Salones</button>
       </nav>
 
-      <!-- Imagen principal del ranking (árbol con avatares) -->
-      <div class="ranking__image">
+      <!-- Ranking Estudiantes -->
+      <div class="ranking__content ranking__content--active" data-content="estudiantes">
+        <!-- Imagen principal del ranking (árbol con avatares) -->
+        <div class="ranking__image">
         <img
           src="img/Fondo-Ranking-HD.webp"
           alt="Ranking de la Selva"
@@ -148,13 +150,13 @@
       <!-- Barra de progreso -->
       <div class="ranking__progress">
         <span class="ranking__progress-text"
-          >Faltan 120 pts para Sachavaca</span
+          >Faltan 120 para subir</span
         >
       </div>
 
-      <!-- Sección Rivales Cercanos -->
-      <section class="ranking__rivals">
-        <h2 class="ranking__rivals-title">Rivales Cercanos</h2>
+        <!-- Sección Rivales Cercanos -->
+        <section class="ranking__rivals">
+          <h2 class="ranking__rivals-title">Rivales Cercanos</h2>
 
         <div class="ranking__rivals-list">
           <!-- Rival 1 -->
@@ -187,7 +189,174 @@
             <span class="ranking__rival-name">15. Pedro</span>
           </div>
         </div>
-      </section>
+        </section>
+      </div>
+
+      <!-- Ranking Salones -->
+      <div class="ranking__content" data-content="salones">
+        <!-- Imagen principal del ranking (árbol con avatares) -->
+        <div class="ranking__image">
+          <img
+            src="img/Fondo-Ranking-HD.webp"
+            alt="Ranking de Salones"
+            class="ranking__image-src"
+            width="400"
+            height="300"
+          />
+
+          <!-- Contenedor de posiciones -->
+          <div class="ranking__positions">
+            <!-- Posición 1 -->
+            <div class="ranking__position ranking__position--1" 
+                 data-user-id="1"
+                 data-user-name="Salón 3A"
+                 data-user-level="Gallito de las Rocas"
+                 data-user-badge="Safiro"
+                 data-user-points="1520"
+                 data-user-recyclings="298"
+                 data-user-avatar="img/gallito-rocas.webp">
+              <div class="ranking__avatar ranking__avatar--gold">
+                <img
+                  src="img/gallito-rocas.webp"
+                  alt="1er lugar"
+                  class="ranking__avatar-img"
+                  width="40"
+                  height="40"
+                />
+              </div>
+              <span class="ranking__position-badge">1</span>
+            </div>
+
+            <!-- Posición 2 -->
+            <div class="ranking__position ranking__position--2"
+                 data-user-id="2"
+                 data-user-name="Salón 2B"
+                 data-user-level="Elefante"
+                 data-user-badge="Diamante"
+                 data-user-points="1480"
+                 data-user-recyclings="285"
+                 data-user-avatar="img/elefante.webp">
+              <div class="ranking__avatar ranking__avatar--silver">
+                <img
+                  src="img/elefante.webp"
+                  alt="2do lugar"
+                  class="ranking__avatar-img"
+                  width="50"
+                  height="50"
+                />
+              </div>
+              <span class="ranking__position-badge">2</span>
+            </div>
+
+            <!-- Posición 3 -->
+            <div class="ranking__position ranking__position--3"
+                 data-user-id="3"
+                 data-user-name="Salón 4C"
+                 data-user-level="Mono"
+                 data-user-badge="Oro"
+                 data-user-points="1350"
+                 data-user-recyclings="272"
+                 data-user-avatar="img/mono.webp">
+              <div class="ranking__avatar ranking__avatar--bronze">
+                <img
+                  src="img/mono.webp"
+                  alt="3er lugar"
+                  class="ranking__avatar-img"
+                  width="65"
+                  height="65"
+                />
+              </div>
+              <span class="ranking__position-badge">3</span>
+            </div>
+
+            <!-- Posición 4 -->
+            <div class="ranking__position ranking__position--4"
+                 data-user-id="4"
+                 data-user-name="Salón 1A"
+                 data-user-level="Hormiga"
+                 data-user-badge="Hierro"
+                 data-user-points="1280"
+                 data-user-recyclings="258"
+                 data-user-avatar="img/hormiga.webp">
+              <div class="ranking__avatar">
+                <img
+                  src="img/hormiga.webp"
+                  alt="4to lugar"
+                  class="ranking__avatar-img"
+                  width="60"
+                  height="60"
+                />
+              </div>
+              <span class="ranking__position-badge">4</span>
+            </div>
+
+            <!-- Posición 5 -->
+            <div class="ranking__position ranking__position--5"
+                 data-user-id="5"
+                 data-user-name="Salón 5B"
+                 data-user-level="Hormiga"
+                 data-user-badge="Cobre"
+                 data-user-points="1150"
+                 data-user-recyclings="245"
+                 data-user-avatar="img/user.webp">
+              <div class="ranking__avatar">
+                <img
+                  src="img/user.webp"
+                  alt="5to lugar"
+                  class="ranking__avatar-img"
+                  width="60"
+                  height="60"
+                />
+              </div>
+              <span class="ranking__position-badge">5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Barra de progreso -->
+        <div class="ranking__progress">
+          <span class="ranking__progress-text"
+            >Faltan 320 para subir</span
+          >
+        </div>
+
+        <!-- Sección Salones Cercanos -->
+        <section class="ranking__rivals">
+          <h2 class="ranking__rivals-title">Salones Cercanos</h2>
+
+          <div class="ranking__rivals-list">
+            <!-- Salón 1 -->
+            <div class="ranking__rival">
+              <div class="ranking__rival-avatar ranking__rival-avatar--gray">
+                <img
+                  src="img/elefante.webp"
+                  alt="Salón 1A"
+                  class="ranking__rival-img"
+                  width="60"
+                  height="60"
+                />
+              </div>
+              <span class="ranking__rival-name">4. Salón 1A</span>
+            </div>
+
+            <!-- Salón 2 (Salón actual) -->
+            <div class="ranking__rival ranking__rival--current">
+              <div class="ranking__rival-avatar ranking__rival-avatar--green">
+                <img src="img/hormiga.webp" alt="Tu Salón" class="ranking__rival-img" width="60" height="60" />
+              </div>
+              <span class="ranking__rival-name">14. Tu Salón</span>
+            </div>
+
+            <!-- Salón 3 -->
+            <div class="ranking__rival">
+              <div class="ranking__rival-avatar ranking__rival-avatar--brown">
+                <img src="img/mono.webp" alt="Salón 2C" class="ranking__rival-img" />
+              </div>
+              <span class="ranking__rival-name">15. Salón 2C</span>
+            </div>
+          </div>
+        </section>
+      </div>
     </article>
 
     <!-- Modal Card Info Usuario -->

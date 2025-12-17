@@ -123,3 +123,35 @@
   z-index: 100;
   right: 15%;
 }
+
+/* ========================================
+   Responsive: Tablet (481px - 768px)
+======================================== */
+@media (min-width: 481px) and (max-width: 768px) {
+  .button {
+    width: 28rem;
+    height: 7rem;
+    font-size: 2rem;
+    padding: 2rem 2.5rem;
+  }
+
+  .button__text {
+    font-size: 2rem;
+  }
+}
+
+/* ========================================
+   Responsive: Desktop (769px+)
+======================================== */
+@media (min-width: 769px) {
+  .button {
+    width: 30rem;
+    height: 7.5rem;
+    font-size: 2.2rem;
+    padding: 2.2rem 3rem;
+  }
+
+  .button__text {
+    font-size: 2.2rem;
+  }
+}

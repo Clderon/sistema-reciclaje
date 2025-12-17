@@ -164,3 +164,56 @@
   right: 0;
   z-index: 1000;
 }
+
+/* ========================================
+   Responsive: Tablet (481px - 768px)
+======================================== */
+@media (min-width: 481px) and (max-width: 768px) {
+  .navbar {
+    height: 8.5rem;
+    padding: 1rem 2rem;
+  }
+
+  .navbar__icon {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .navbar__label {
+    font-size: 1.5rem;
+  }
+
+  .navbar__item {
+    gap: 0.8rem;
+    padding: 1rem 2rem;
+  }
+}
+
+/* ========================================
+   Responsive: Desktop (769px+)
+======================================== */
+@media (min-width: 769px) {
+  .navbar {
+    height: 9rem;
+    padding: 1.2rem 2.5rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2rem 2rem 0 0;
+  }
+
+  .navbar__icon {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .navbar__label {
+    font-size: 1.6rem;
+  }
+
+  .navbar__item {
+    gap: 1rem;
+    padding: 1.2rem 2.5rem;
+  }
+}

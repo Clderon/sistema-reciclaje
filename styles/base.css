@@ -108,3 +108,35 @@ body {
   width: 90%;
   margin: 0 auto;
 }
+
+/* ========================================
+   Responsive: Tablet (481px - 768px)
+======================================== */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    width: 85%;
+    max-width: 60rem;
+    padding-top: 3rem;
+    gap: 2rem;
+  }
+
+  html {
+    font-size: 65%; /* Ligeramente más grande en tablets */
+  }
+}
+
+/* ========================================
+   Responsive: Desktop (769px+)
+======================================== */
+@media (min-width: 769px) {
+  body {
+    width: 80%;
+    max-width: 80rem;
+    padding-top: 4rem;
+    gap: 2.5rem;
+  }
+
+  html {
+    font-size: 68%; /* Más grande en desktop */
+  }
+}
