@@ -52,13 +52,11 @@
 /* Element: Label (oculto por defecto) */
 .navbar__label {
   font-size: 1.5rem;
-  font-weight: 800;
   max-height: 0;
   opacity: 0;
   overflow: hidden;
   margin-top: 0;
   color: var(--colorTextWhite);
-  -webkit-text-stroke: 0.5px var(--colorTextBorde);
   transition: all 0.3s ease;
 }
 
