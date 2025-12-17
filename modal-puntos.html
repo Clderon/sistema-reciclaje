@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal - Puntos Enviados</title>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/modal-puntos.css" />
+  </head>
+  <body>
+    <!-- Overlay del modal -->
+    <div class="modal-puntos__overlay">
+      <!-- Contenedor principal del modal -->
+      <div class="modal-puntos">
+        <!-- Sección superior con fondo verde y rayos de sol -->
+        <div class="modal-puntos__header">
+          <div class="modal-puntos__sunbeams"></div>
+          
+          <!-- Mono animado -->
+          <div class="modal-puntos__monkey">
+            <img src="img/mono_modal.webp" alt="Mono feliz" class="modal-puntos__monkey-img" />
+          </div>
+        </div>
+
+        <!-- Sección de contenido (fondo blanco) -->
+        <div class="modal-puntos__content">
+          <!-- Título principal -->
+          <h2 class="modal-puntos__title">¡Reciclaje Enviado!!</h2>
+
+          <!-- Mensaje descriptivo -->
+          <p class="modal-puntos__message">
+            Has asignado <span class="modal-puntos__points">10 Puntos</span> al Agente 
+            <span class="modal-puntos__agent">Juan P.</span> por su reciclaje de 
+            <span class="modal-puntos__material">Plástico</span>.
+          </p>
+
+          <!-- Botón de confirmación en forma de hoja -->
+          <button class="modal-puntos__button">
+            <span class="modal-puntos__button-text">¡Genial!</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

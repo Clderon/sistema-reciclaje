@@ -6,6 +6,7 @@
 // Esperar a que el DOM esté listo
 document.addEventListener("DOMContentLoaded", () => {
   initNavbar();
+  initModalPuntos();
 });
 
 /* ========================================
@@ -187,6 +188,173 @@ function initContador() {
 }
 
 /* ========================================
+     MODAL - Funcionalidad de modales
+  ======================================== */
+function initModal() {
+  const modal = document.getElementById("modal-user-info");
+  
+  if (!modal) return;
+
+  // Cerrar modal con botón X o click en overlay
+  const closeElements = modal.querySelectorAll("[data-close-modal]");
+  closeElements.forEach((element) => {
+    element.addEventListener("click", () => {
+      closeModal(modal);
+    });
+  });
+
+  // Cerrar modal con tecla Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("modal--active")) {
+      closeModal(modal);
+    }
+  });
+}
+
+function openModal(modalElement) {
+  if (!modalElement) return;
+  
+  modalElement.classList.add("modal--active");
+  document.body.style.overflow = "hidden"; // Prevenir scroll del body
+}
+
+function closeModal(modalElement) {
+  if (!modalElement) return;
+  
+  modalElement.classList.remove("modal--active");
+  document.body.style.overflow = ""; // Restaurar scroll
+}
+
+/* ========================================
+     RANKING POSITIONS - Click para ver info
+  ======================================== */
+function initRankingPositions() {
+  const positions = document.querySelectorAll(".ranking__position");
+  const modal = document.getElementById("modal-user-info");
+
+  if (!positions.length || !modal) return;
+
+  positions.forEach((position) => {
+    position.addEventListener("click", () => {
+      // Obtener datos del usuario desde data attributes
+      const userData = {
+        id: position.dataset.userId,
+        name: position.dataset.userName,
+        level: position.dataset.userLevel,
+        badge: position.dataset.userBadge,
+        points: position.dataset.userPoints,
+        recyclings: position.dataset.userRecyclings,
+        avatar: position.dataset.userAvatar,
+        position: position.querySelector(".ranking__position-badge")?.textContent || "?"
+      };
+
+      // Actualizar contenido del modal
+      updateModalContent(userData);
+      
+      // Abrir modal
+      openModal(modal);
+    });
+  });
+}
+
+function updateModalContent(userData) {
+  // Actualizar avatar
+  const avatarImg = document.getElementById("modal-avatar");
+  if (avatarImg && userData.avatar) {
+    avatarImg.src = userData.avatar;
+    avatarImg.alt = userData.name;
+  }
+
+  // Actualizar nombre
+  const username = document.getElementById("modal-username");
+  if (username) {
+    username.textContent = userData.name || "Usuario";
+  }
+
+  // Actualizar nivel
+  const level = document.getElementById("modal-level");
+  if (level) {
+    level.textContent = `Nivel: ${userData.level || "Desconocido"}`;
+  }
+
+  // Actualizar badge
+  const badge = document.getElementById("modal-badge");
+  if (badge) {
+    badge.textContent = userData.badge || "N/A";
+  }
+
+  // Actualizar puntos
+  const points = document.getElementById("modal-points");
+  if (points) {
+    points.textContent = userData.points || "0";
+  }
+
+  // Actualizar reciclajes
+  const recyclings = document.getElementById("modal-recyclings");
+  if (recyclings) {
+    recyclings.textContent = userData.recyclings || "0";
+  }
+
+  // Actualizar posición
+  const positionEl = document.getElementById("modal-position");
+  if (positionEl) {
+    positionEl.textContent = userData.position || "?";
+  }
+}
+
+/* ========================================
+     MODAL PUNTOS - Mostrar modal al enviar reciclaje
+  ======================================== */
+function initModalPuntos() {
+  const sendButton = document.querySelector(".button--primary");
+  const modalPuntos = document.getElementById("modal-puntos");
+  const closeButton = document.getElementById("modal-puntos-close");
+
+  if (!sendButton || !modalPuntos) return;
+
+  // Abrir modal al hacer clic en "Enviar Mi Reciclaje"
+  sendButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    openModalPuntos(modalPuntos);
+  });
+
+  // Cerrar modal con el botón "¡Genial!"
+  if (closeButton) {
+    closeButton.addEventListener("click", () => {
+      closeModalPuntos(modalPuntos);
+    });
+  }
+
+  // Cerrar modal al hacer clic en el overlay
+  modalPuntos.addEventListener("click", (e) => {
+    if (e.target === modalPuntos) {
+      closeModalPuntos(modalPuntos);
+    }
+  });
+
+  // Cerrar modal con tecla Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modalPuntos.classList.contains("modal-puntos__overlay--hidden")) {
+      closeModalPuntos(modalPuntos);
+    }
+  });
+}
+
+function openModalPuntos(modalElement) {
+  if (!modalElement) return;
+  
+  modalElement.classList.remove("modal-puntos__overlay--hidden");
+  document.body.style.overflow = "hidden"; // Prevenir scroll del body
+}
+
+function closeModalPuntos(modalElement) {
+  if (!modalElement) return;
+  
+  modalElement.classList.add("modal-puntos__overlay--hidden");
+  document.body.style.overflow = ""; // Restaurar scroll
+}
+
+/* ========================================
      INICIALIZAR TODO
   ======================================== */
 document.addEventListener("DOMContentLoaded", () => {
@@ -194,4 +362,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initRankingTabs();
   initCategorias();
   initContador();
+  initModal();
+  initRankingPositions();
+  initModalPuntos();
 });

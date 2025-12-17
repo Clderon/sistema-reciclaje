@@ -1,0 +1,447 @@
+/* ========================================
+   COMPONENTE: Perfil (BEM)
+   Block: .perfil
+   Elements: .perfil__card, .perfil__header, etc.
+   Modifiers: .perfil__button--edit, .perfil__button--settings
+======================================== */
+
+/* ========================================
+   Block: Perfil (Contenedor Principal)
+======================================== */
+.perfil,
+.perfil * {
+  box-sizing: border-box;
+}
+
+.perfil {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 0 10rem 0;
+  overflow-x: hidden;
+  background-color: transparent;
+}
+
+/* ========================================
+   Element: Card (Tarjeta de Perfil)
+======================================== */
+.perfil__card {
+  background: var(--colorTarget);
+  border-radius: 1rem;
+  border: 3px solid var(--colorTextContenido);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 40rem;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--shadowDarkMedium);
+  width: 100%;
+}
+
+/* ========================================
+   Element: Header (Encabezado de la tarjeta)
+======================================== */
+.perfil__header {
+  background: var(--colorTargetFondo);
+  border-radius: 1rem 1rem 0 0;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 6.4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.perfil__title {
+  color: var(--colorTextContenido);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+/* ========================================
+   Element: Section (Sección de información)
+======================================== */
+.perfil__section {
+  width: 100%;
+  height: 22.3rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.perfil__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* ========================================
+   Element: Info (Contenedor de avatar y nombre)
+======================================== */
+.perfil__info {
+  width: 35.9rem;
+  height: 13.4rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  z-index: 2;
+}
+
+/* ========================================
+   Element: Name Card (Tarjeta de nombre y nivel)
+======================================== */
+.perfil__name-card {
+  width: 21.9rem;
+  height: 7.8rem;
+  position: absolute;
+  left: 10.5rem;
+  top: 1.7rem;
+  background: var(--colorAvatarBrown);
+  border-radius: 1rem;
+  border: 1px solid var(--colorTextContenido);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perfil__name-card-inner {
+  background: var(--colorTargetFondo);
+  border-radius: 1rem;
+  border: 2px solid var(--colorTextContenido);
+  padding: 1rem 0.9rem;
+  width: 21rem;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.perfil__name,
+.perfil__level {
+  text-align: right;
+  align-self: stretch;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: var(--colorTextContenido);
+}
+
+.perfil__name {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.perfil__level {
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+/* ========================================
+   Element: Avatar Wrapper (Contenedor del avatar)
+======================================== */
+.perfil__avatar-wrapper {
+  width: 12.4rem;
+  height: 13.4rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.perfil__avatar-container {
+  background: var(--colorTextContenido);
+  border-radius: 50%;
+  border: 1px solid var(--colorTextContenido);
+  padding: 3px;
+  overflow: hidden;
+  width: 11.8rem;
+  height: 11.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perfil__avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========================================
+   Element: Badge (Badge del nivel)
+======================================== */
+.perfil__badge {
+  margin-top: -1rem;
+  background: var(--colorAvatarBrown);
+  border-radius: 3rem;
+  border: 3px solid var(--colorTextContenido);
+  padding: 0.4rem 2.9rem;
+  z-index: 2;
+}
+
+.perfil__badge-text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--colorTextWhite);
+}
+
+/* ========================================
+   Element: Stats (Estadísticas)
+======================================== */
+.perfil__stats {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: space-between;
+  width: 100%;
+  height: 8.4rem;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  z-index: 2;
+}
+
+/* ========================================
+   Element: Stat (Cada estadística)
+======================================== */
+.perfil__stat {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.perfil__stat-outer {
+  background: var(--colorAvatarBrown);
+  border-radius: 1rem;
+  border: 1px solid var(--colorTextContenido);
+  padding: 0.5rem;
+  box-shadow: 0px 4px 4px 0px var(--shadowDarkExtra);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.perfil__stat-inner {
+  background: var(--colorTargetFondo);
+  border-radius: 1rem;
+  border: 2px solid var(--colorTextContenido);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.perfil__stat-label {
+  color: var(--colorTextContenido);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1.1;
+  position: relative;
+  align-self: stretch;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.perfil__stat-value {
+  color: var(--colorTextContenido);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  font-weight: 800;
+  position: relative;
+  align-self: stretch;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+/* ========================================
+   Element: Badges (Sección de insignias)
+======================================== */
+.perfil__badges {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1.5rem;
+}
+
+.perfil__badges-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--colorTextContenido);
+  margin: 0;
+  align-self: center;
+  padding-left: 1rem;
+}
+
+.perfil__badges-list {
+  background: var(--colorTargetFondo);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 10rem;
+}
+
+.perfil__badge-item {
+  flex-shrink: 0;
+  width: 7.9rem;
+  height: 7.9rem;
+  aspect-ratio: 1;
+  display: block;
+}
+
+.perfil__badge-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.perfil__badge-item--more {
+  object-fit: contain;
+}
+
+/* ========================================
+   Element: Actions (Acciones)
+======================================== */
+.perfil__actions {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 7.4rem;
+}
+
+/* ========================================
+   Element: Button (Botones)
+======================================== */
+.perfil__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.perfil__button:active {
+  transform: scale(0.98);
+}
+
+/* ========================================
+   Modifier: Button Edit (Botón Editar)
+======================================== */
+.perfil__button--edit {
+  background: var(--colorTargetFondo);
+  border-radius: 1rem;
+  border: 2px solid var(--colorTextContenido);
+  padding: 1rem 2rem;
+  flex-grow: 1;
+}
+
+.perfil__button-text {
+  color: var(--colorTextContenido);
+  font-weight: 700;
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ========================================
+   Modifier: Button Settings (Botón Ajustes)
+======================================== */
+.perfil__button--settings {
+  flex-shrink: 0;
+  width: 5.8rem;
+  height: 100%;
+  background: var(--colorTargetFondo);
+  border-radius: 1rem;
+  border: 2px solid var(--colorTextContenido);
+  padding: 0;
+  box-shadow: inset 0px -11px 0.5px -6px var(--shadowDark);
+}
+
+.perfil__button--settings:active {
+  box-shadow: inset 0px -5px 0.5px -6px var(--shadowDarkMedium);
+}
+
+.perfil__button-icon {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perfil__button-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========================================
+   Responsive
+======================================== */
+@media (max-width: 480px) {
+  .perfil__info {
+    width: 90%;
+    max-width: 35.9rem;
+  }
+
+  .perfil__name-card {
+    left: auto;
+    right: 0;
+  }
+
+  .perfil__avatar-wrapper {
+    left: 0;
+  }
+}

@@ -4,12 +4,19 @@
 ======================================== */
 
 /* ========================================
+   Importar Fuente Roboto desde Google Fonts
+   font-display: swap evita el FOIT (Flash of Invisible Text)
+======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+/* ========================================
    Variables de Colores
 ======================================== */
 :root {
   /* Fondos */
   --colorTargetFondo: #eedfc0;
   --colorTarget: #f8f7e3;
+  --colorFondoFallback: #4a7c3f; /* Color respaldo mientras carga imagen */
 
   /* Botones */
   --colorButton: #46a330;
@@ -23,16 +30,36 @@
 
   /* Avatares */
   --colorAvatarGray: #9ca3af;
+  --colorAvatarGrayBorder: #6b7280;
   --colorAvatarGreen: #46a330;
   --colorAvatarBrown: #a67c52;
 
-  /* Color tipos de reclajes */
+  /* Color tipos de reciclaje */
   --colorTipoPapel: #3299e3;
   --colorTipoPlastico: #4dc269;
   --colorTipoMetal: #929aa0;
   --colorTipoOrganico: #d27c2f;
   --colorTipoVidrio: #64cde2;
   --colorTipoOtros: #9471e5;
+
+  /* Barra de progreso */
+  --colorProgressStart: #2a774d;
+  --colorProgressMid: #4d944e;
+  --colorProgressEnd: #98c371;
+  --colorProgressBg: #d4bc98;
+
+  /* Sombras (opacidades) */
+  --shadowLight: rgba(255, 255, 255, 0.3);
+  --shadowLightStrong: rgba(255, 255, 255, 0.5);
+  --shadowDark: rgba(0, 0, 0, 0.1);
+  --shadowDarkMedium: rgba(0, 0, 0, 0.15);
+  --shadowDarkStrong: rgba(0, 0, 0, 0.2);
+  --shadowDarkExtra: rgba(0, 0, 0, 0.3);
+  --shadowButton: rgba(70, 163, 48, 0.3);
+  --shadowButtonStrong: rgba(70, 163, 48, 0.4);
+
+  /* Modal */
+  --modalBgOpacity: 0.15; /* Opacidad de la imagen de fondo del modal */
 }
 
 /* ========================================
@@ -52,6 +79,14 @@
   ======================================== */
 html {
   font-size: 62.5%; /* 16px * 0.625 = 10px */
+  /* Fondo aplicado en html para mayor estabilidad */
+  background-color: var(--colorFondoFallback);
+  background-image: url(../img/frame-5.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fija el fondo, evita movimiento */
+  min-height: 100%;
 }
 
 /* ========================================
@@ -61,14 +96,15 @@ body {
   font-size: 1.6rem;
   font-family: "Roboto", sans-serif;
   line-height: 1.5;
-  background: url(../img/frame-5.png) center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: transparent; /* El fondo está en html */
   overflow: visible;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 12rem; /* Espacio para el navbar fijo */
   width: 90%;
   margin: 0 auto;
 }

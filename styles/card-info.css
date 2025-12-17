@@ -1,0 +1,383 @@
+/* ========================================
+   COMPONENTE: Card Info Modal (BEM)
+   Block: .modal, .card-info
+   Elements: .modal__overlay, .modal__content, .card-info__header, etc.
+   Modifiers: .modal--active
+   
+   Nota: Las variables están centralizadas en base.css
+======================================== */
+
+/* ========================================
+   Block: Modal Overlay
+======================================== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.modal__content {
+  position: relative;
+  z-index: 1;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalSlideIn 0.3s ease;
+}
+
+.modal--active .modal__content {
+  animation: modalSlideIn 0.3s ease forwards;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Botón cerrar modal */
+.modal__close {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: linear-gradient(
+    to bottom,
+    var(--colorButtonDegradado) 0%,
+    var(--colorButton) 100%
+  );
+  border: 3px solid var(--colorTextBorde);
+  color: var(--colorTextWhite);
+  font-size: 2rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.modal__close:hover {
+  transform: scale(1.1);
+}
+
+.modal__close:active {
+  transform: scale(0.95);
+}
+
+/* ========================================
+   Block: Card Info (Contenido del modal)
+======================================== */
+.card-info {
+  background-color: var(--colorTarget);
+  border: 3px solid var(--colorTextBorde);
+  border-radius: 2rem;
+  overflow: hidden;
+  width: 34rem;
+  box-shadow: 0 8px 32px var(--shadowDarkExtra);
+}
+
+/* ========================================
+   Element: Body con imagen de fondo
+======================================== */
+.card-info__body {
+  position: relative;
+  background-color: var(--colorTarget);
+}
+
+/* Imagen de fondo con opacidad */
+.card-info__body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../img/frame-5.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: var(--modalBgOpacity, 0.15); /* Opacidad desde variable */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Asegurar que el contenido esté sobre el fondo */
+.card-info__body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   Element: Header de la card
+======================================== */
+.card-info__header {
+  background-color: var(--colorTargetFondo);
+  padding: 1.2rem 2rem;
+  text-align: center;
+  border-bottom: 3px solid var(--colorTextBorde);
+}
+
+.card-info__header-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--colorTextContenido);
+}
+
+/* ========================================
+   Element: Perfil del usuario
+======================================== */
+.card-info__profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: transparent; /* Transparente para ver el fondo */
+}
+
+.card-info__avatar {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-info__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-info__user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.card-info__username {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--colorTextContenido);
+  line-height: 1.1;
+}
+
+.card-info__level {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--colorTextContenido);
+}
+
+/* ========================================
+   Element: Badge del usuario
+======================================== */
+.card-info__badge-wrapper {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.card-info__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  background: linear-gradient(
+    to bottom,
+    var(--colorButtonDegradado) 0%,
+    var(--colorButton) 100%
+  );
+  border: 3px solid var(--colorTextBorde);
+  border-radius: 2rem;
+}
+
+.card-info__badge-text {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--colorTextWhite);
+  text-transform: uppercase;
+}
+
+/* ========================================
+   Element: Estadísticas
+======================================== */
+.card-info__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.card-info__stat {
+  background-color: var(--colorTargetFondo);
+  border: 2px solid var(--colorTextBorde);
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.card-info__stat-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--colorTextContenido);
+  line-height: 1.2;
+}
+
+.card-info__stat-value {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--colorTextContenido);
+}
+
+/* ========================================
+   Element: Sección de Insignias
+======================================== */
+.card-info__badges-section {
+  background-color: var(--colorTargetFondo);
+  padding: 1.5rem;
+  border-top: 3px solid var(--colorTextBorde);
+}
+
+.card-info__badges-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--colorTextContenido);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.card-info__badges-container {
+  background-color: var(--colorTarget);
+  border: 2px solid var(--colorTextBorde);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
+
+.card-info__badges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card-info__badge-item {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 3px solid var(--colorTextBorde);
+  overflow: hidden;
+  background-color: var(--colorTargetFondo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-info__badge-item--locked {
+  opacity: 0.5;
+  position: relative;
+}
+
+.card-info__badge-item--locked::after {
+  content: "🔒";
+  position: absolute;
+  font-size: 1.5rem;
+}
+
+.card-info__badge-img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+/* ========================================
+   Modifier: Hacer clickeables las posiciones
+======================================== */
+.ranking__position {
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.2s ease;
+}
+
+.ranking__position:hover {
+  transform: scale(1.1);
+}
+
+.ranking__position:active {
+  transform: scale(0.95);
+}
+
+/* ========================================
+   Responsive: Móvil pequeño
+======================================== */
+@media (max-width: 360px) {
+  .card-info {
+    width: 30rem;
+  }
+
+  .card-info__avatar {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .card-info__username {
+    font-size: 1.8rem;
+  }
+
+  .card-info__stats {
+    gap: 0.5rem;
+  }
+
+  .card-info__stat {
+    padding: 0.8rem 0.5rem;
+  }
+
+  .card-info__stat-label {
+    font-size: 1rem;
+  }
+
+  .card-info__stat-value {
+    font-size: 1.6rem;
+  }
+
+  .card-info__badge-item {
+    width: 5rem;
+    height: 5rem;
+  }
+}

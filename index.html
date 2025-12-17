@@ -9,13 +9,10 @@
     <link rel="stylesheet" href="styles/card-ranking.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/registro.css" />
+    <link rel="stylesheet" href="styles/modal-puntos.css" />
   </head>
   <body>
     <header class="header">
-      <!-- Decoración izquierda (árboles/selva) -->
-      <div class="header__decoration header__decoration--left">
-        <img src="img/tree-left.png" alt="" class="header__tree" />
-      </div>
 
       <!-- Contenido central -->
       <div class="header__content">
@@ -23,9 +20,6 @@
         <p class="header__subtitle">A reciclar por la selva!</p>
       </div>
 
-      <!-- Decoración derecha (árboles/selva) -->
-      <div class="header__decoration header__decoration--right">
-        <img src="img/tree-right.png" alt="" class="header__tree" />
       </div>
     </header>
 
@@ -35,7 +29,7 @@
         <div class="registro__category-bg"></div>
         <div class="registro__category-icon">
           <img
-            src="img/papel-carton.png"
+            src="img/papel-carton.webp"
             alt="Papel"
             class="registro__category-img"
           />
@@ -48,9 +42,11 @@
         <div class="registro__category-bg"></div>
         <div class="registro__category-icon">
           <img
-            src="img/botella.png"
+            src="img/botella.webp"
             alt="Plástico"
             class="registro__category-img"
+            width="50"
+            height="50"
           />
         </div>
         <span class="registro__category-label">Plástico</span>
@@ -61,9 +57,11 @@
         <div class="registro__category-bg"></div>
         <div class="registro__category-icon">
           <img
-            src="img/metal.png"
+            src="img/metal.webp"
             alt="Vidrio"
             class="registro__category-img"
+            width="50"
+            height="50"
           />
         </div>
         <span class="registro__category-label">Metal</span>
@@ -74,9 +72,11 @@
         <div class="registro__category-bg"></div>
         <div class="registro__category-icon">
           <img
-            src="img/vidrio.png"
+            src="img/vidrio.webp"
             alt="Metal"
             class="registro__category-img"
+            width="50"
+            height="50"
           />
         </div>
         <span class="registro__category-label">Vidrio</span>
@@ -87,9 +87,11 @@
         <div class="registro__category-bg"></div>
         <div class="registro__category-icon">
           <img
-            src="img/organico.png"
+            src="img/organico.webp"
             alt="Orgánico"
             class="registro__category-img"
+            width="50"
+            height="50"
           />
         </div>
         <span class="registro__category-label">Orgánico</span>
@@ -100,9 +102,11 @@
         <div class="registro__category-bg"></div>
         <div class="registro__category-icon">
           <img
-            src="img/otros.png"
+            src="img/otros.webp"
             alt="Electrónico"
             class="registro__category-img"
+            width="50"
+            height="50"
           />
         </div>
         <span class="registro__category-label">Otros</span>
@@ -169,18 +173,52 @@
       </div>
     </article>
 
+    <!-- Modal de Puntos Enviados -->
+    <div class="modal-puntos__overlay modal-puntos__overlay--hidden" id="modal-puntos">
+      <!-- Contenedor principal del modal -->
+      <div class="modal-puntos">
+        <!-- Sección superior con fondo verde y rayos de sol -->
+        <div class="modal-puntos__header">
+          <div class="modal-puntos__sunbeams"></div>
+          
+          <!-- Mono animado -->
+          <div class="modal-puntos__monkey">
+            <img src="img/mono_modal.webp" alt="Mono feliz" class="modal-puntos__monkey-img" />
+          </div>
+        </div>
+
+        <!-- Sección de contenido (fondo blanco) -->
+        <div class="modal-puntos__content">
+          <!-- Título principal -->
+          <h2 class="modal-puntos__title">¡Reciclaje Enviado!!</h2>
+
+          <!-- Mensaje descriptivo -->
+          <p class="modal-puntos__message">
+            Has asignado <span class="modal-puntos__points">10 Puntos</span> al Agente 
+            <span class="modal-puntos__agent">Juan P.</span> por su reciclaje de 
+            <span class="modal-puntos__material">Plástico</span>.
+          </p>
+
+          <!-- Botón de confirmación en forma de hoja -->
+          <button class="modal-puntos__button" id="modal-puntos-close">
+            <span class="modal-puntos__button-text">¡Genial!</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- Componente Navbar con BEM -->
     <nav class="navbar navbar--fixed">
       <a href="./index.html" class="navbar__item navbar__item--active">
-        <img src="img/home.png" alt="Inicio" class="navbar__icon" />
+        <img src="img/home.webp" alt="Inicio" class="navbar__icon" width="50" height="50" />
         <span class="navbar__label">Inicio</span>
       </a>
       <a href="./logros.html" class="navbar__item">
-        <img src="img/trofeos.png" alt="Logros" class="navbar__icon" />
+        <img src="img/trofeos.webp" alt="Logros" class="navbar__icon" width="50" height="50" />
         <span class="navbar__label">Logros</span>
       </a>
-      <a href="#" class="navbar__item">
-        <img src="img/mochila.png" alt="Perfil" class="navbar__icon" />
+      <a href="./perfil.html" class="navbar__item">
+        <img src="img/mochila.webp" alt="Perfil" class="navbar__icon" width="50" height="50" />
         <span class="navbar__label">Perfil</span>
       </a>
     </nav>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/card-ranking.css" />
     <link rel="stylesheet" href="styles/registro.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/card-info.css" />
   </head>
   <body>
     <!-- Componente Card Ranking con BEM -->
@@ -28,67 +29,115 @@
       <!-- Imagen principal del ranking (árbol con avatares) -->
       <div class="ranking__image">
         <img
-          src="img/Fondo-Ranking-HD.png"
+          src="img/Fondo-Ranking-HD.webp"
           alt="Ranking de la Selva"
           class="ranking__image-src"
+          width="400"
+          height="300"
         />
 
         <!-- Contenedor de posiciones -->
         <div class="ranking__positions">
-          <div class="ranking__position ranking__position--1">
+          <!-- Posición 1 -->
+          <div class="ranking__position ranking__position--1" 
+               data-user-id="1"
+               data-user-name="Gallito Campeón"
+               data-user-level="Gallito de las Rocas"
+               data-user-badge="GOLD"
+               data-user-points="520"
+               data-user-recyclings="98"
+               data-user-avatar="img/gallito-rocas.webp">
             <div class="ranking__avatar ranking__avatar--gold">
               <img
-                src="img/gallito-rocas.png"
+                src="img/gallito-rocas.webp"
                 alt="1er lugar"
                 class="ranking__avatar-img"
+                width="40"
+                height="40"
               />
             </div>
             <span class="ranking__position-badge">1</span>
           </div>
 
           <!-- Posición 2 -->
-          <div class="ranking__position ranking__position--2">
+          <div class="ranking__position ranking__position--2"
+               data-user-id="2"
+               data-user-name="Elefante Sabio"
+               data-user-level="Elefante"
+               data-user-badge="SILVER"
+               data-user-points="480"
+               data-user-recyclings="85"
+               data-user-avatar="img/elefante.webp">
             <div class="ranking__avatar ranking__avatar--silver">
               <img
-                src="img/elefante.png"
+                src="img/elefante.webp"
                 alt="2do lugar"
                 class="ranking__avatar-img"
+                width="50"
+                height="50"
               />
             </div>
             <span class="ranking__position-badge">2</span>
           </div>
 
           <!-- Posición 3 -->
-          <div class="ranking__position ranking__position--3">
+          <div class="ranking__position ranking__position--3"
+               data-user-id="3"
+               data-user-name="Mono Veloz"
+               data-user-level="Mono"
+               data-user-badge="BRONZE"
+               data-user-points="350"
+               data-user-recyclings="72"
+               data-user-avatar="img/mono.webp">
             <div class="ranking__avatar ranking__avatar--bronze">
               <img
-                src="img/mono.png"
+                src="img/mono.webp"
                 alt="3er lugar"
                 class="ranking__avatar-img"
+                width="65"
+                height="65"
               />
             </div>
             <span class="ranking__position-badge">3</span>
           </div>
 
           <!-- Posición 4 -->
-          <div class="ranking__position ranking__position--4">
+          <div class="ranking__position ranking__position--4"
+               data-user-id="4"
+               data-user-name="Hormiguita Trabajadora"
+               data-user-level="Hormiga"
+               data-user-badge="ANT"
+               data-user-points="280"
+               data-user-recyclings="58"
+               data-user-avatar="img/hormiga.webp">
             <div class="ranking__avatar">
               <img
-                src="img/hormiga.png"
+                src="img/hormiga.webp"
                 alt="4to lugar"
                 class="ranking__avatar-img"
+                width="60"
+                height="60"
               />
             </div>
             <span class="ranking__position-badge">4</span>
           </div>
 
           <!-- Posición 5 -->
-          <div class="ranking__position ranking__position--5">
+          <div class="ranking__position ranking__position--5"
+               data-user-id="5"
+               data-user-name="Explorador Juan"
+               data-user-level="Hormiga"
+               data-user-badge="ANT"
+               data-user-points="150"
+               data-user-recyclings="45"
+               data-user-avatar="img/user.webp">
             <div class="ranking__avatar">
               <img
-                src="img/user.png"
+                src="img/user.webp"
                 alt="5to lugar"
                 class="ranking__avatar-img"
+                width="60"
+                height="60"
               />
             </div>
             <span class="ranking__position-badge">5</span>
@@ -112,9 +161,11 @@
           <div class="ranking__rival">
             <div class="ranking__rival-avatar ranking__rival-avatar--gray">
               <img
-                src="img/elefante.png"
+                src="img/elefante.webp"
                 alt="Maria"
                 class="ranking__rival-img"
+                width="60"
+                height="60"
               />
             </div>
             <span class="ranking__rival-name">4. Maria</span>
@@ -123,7 +174,7 @@
           <!-- Rival 2 (Usuario actual) -->
           <div class="ranking__rival ranking__rival--current">
             <div class="ranking__rival-avatar ranking__rival-avatar--green">
-              <img src="img/hormiga.png" alt="Tu" class="ranking__rival-img" />
+              <img src="img/hormiga.webp" alt="Tu" class="ranking__rival-img" width="60" height="60" />
             </div>
             <span class="ranking__rival-name">14. Tu</span>
           </div>
@@ -131,7 +182,7 @@
           <!-- Rival 3 -->
           <div class="ranking__rival">
             <div class="ranking__rival-avatar ranking__rival-avatar--brown">
-              <img src="img/mono.png" alt="Pedro" class="ranking__rival-img" />
+              <img src="img/mono.webp" alt="Pedro" class="ranking__rival-img" />
             </div>
             <span class="ranking__rival-name">15. Pedro</span>
           </div>
@@ -139,18 +190,99 @@
       </section>
     </article>
 
+    <!-- Modal Card Info Usuario -->
+    <div class="modal" id="modal-user-info">
+      <div class="modal__overlay" data-close-modal></div>
+      <div class="modal__content">
+        <button class="modal__close" data-close-modal>&times;</button>
+        
+        <!-- Card Info -->
+        <article class="card-info">
+          <!-- Header -->
+          <header class="card-info__header">
+            <h2 class="card-info__header-title">Mi Mochila de Explorador</h2>
+          </header>
+
+          <!-- Sección central con fondo -->
+          <div class="card-info__body">
+            <!-- Perfil -->
+            <div class="card-info__profile">
+              <div class="card-info__avatar">
+                <img 
+                  src="img/user.webp" 
+                  alt="Avatar" 
+                  class="card-info__avatar-img"
+                  id="modal-avatar"
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <div class="card-info__user-info">
+                <h3 class="card-info__username" id="modal-username">Explorador Juan</h3>
+                <span class="card-info__level" id="modal-level">Nivel: Hormiga</span>
+              </div>
+            </div>
+
+            <!-- Badge -->
+            <div class="card-info__badge-wrapper">
+              <div class="card-info__badge">
+                <span class="card-info__badge-text" id="modal-badge">ANT</span>
+              </div>
+            </div>
+
+            <!-- Estadísticas -->
+            <div class="card-info__stats">
+              <div class="card-info__stat">
+                <span class="card-info__stat-label">Puntos Totales</span>
+                <span class="card-info__stat-value" id="modal-points">150</span>
+              </div>
+              <div class="card-info__stat">
+                <span class="card-info__stat-label">Reciclajes</span>
+                <span class="card-info__stat-value" id="modal-recyclings">45</span>
+              </div>
+              <div class="card-info__stat">
+                <span class="card-info__stat-label">Posición</span>
+                <span class="card-info__stat-value" id="modal-position">5</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sección Insignias -->
+          <section class="card-info__badges-section">
+            <h3 class="card-info__badges-title">Mis insignias</h3>
+            <div class="card-info__badges-container">
+              <div class="card-info__badges-grid" id="modal-badges">
+                <div class="card-info__badge-item">
+                  <img src="img/hormiga.webp" alt="Insignia 1" class="card-info__badge-img" width="54" height="54" />
+                </div>
+                <div class="card-info__badge-item">
+                  <img src="img/elefante.webp" alt="Insignia 2" class="card-info__badge-img" width="54" height="54" />
+                </div>
+                <div class="card-info__badge-item">
+                  <img src="img/mono.webp" alt="Insignia 3" class="card-info__badge-img" width="54" height="54" />
+                </div>
+                <div class="card-info__badge-item card-info__badge-item--locked">
+                  <img src="img/gallito-rocas.webp" alt="Insignia bloqueada" class="card-info__badge-img" width="54" height="54" />
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+      </div>
+    </div>
+
     <!-- Componente Navbar con BEM -->
     <nav class="navbar navbar--fixed">
       <a href="./index.html" class="navbar__item navbar__item--active">
-        <img src="img/home.png" alt="Inicio" class="navbar__icon" />
+        <img src="img/home.webp" alt="Inicio" class="navbar__icon" width="50" height="50" />
         <span class="navbar__label">Inicio</span>
       </a>
       <a href="#" class="navbar__item">
-        <img src="img/trofeos.png" alt="Logros" class="navbar__icon" />
+        <img src="img/trofeos.webp" alt="Logros" class="navbar__icon" width="50" height="50" />
         <span class="navbar__label">Logros</span>
       </a>
-      <a href="#" class="navbar__item">
-        <img src="img/mochila.png" alt="Perfil" class="navbar__icon" />
+      <a href="./perfil.html" class="navbar__item">
+        <img src="img/mochila.webp" alt="Perfil" class="navbar__icon" width="50" height="50" />
         <span class="navbar__label">Perfil</span>
       </a>
     </nav>

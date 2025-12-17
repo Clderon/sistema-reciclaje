@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Mochila de Explorador</title>
+    <link rel="stylesheet" href="styles/vars.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/perfil.css" />
+  </head>
+  <body>
+    <main class="perfil">
+      <article class="perfil__card">
+        <!-- Encabezado de la tarjeta -->
+        <header class="perfil__header">
+          <h1 class="perfil__title">Mi Mochila de Explorador</h1>
+        </header>
+
+        <!-- Sección de información del perfil -->
+        <section class="perfil__section">
+          <img class="perfil__background" src="img/fondo_.webp" alt="Fondo decorativo" />
+          
+          <!-- Contenedor de información (avatar y nombre) -->
+          <div class="perfil__info">
+            <!-- Tarjeta de nombre y nivel -->
+            <div class="perfil__name-card">
+              <div class="perfil__name-card-inner">
+                <p class="perfil__name">Explorador Juan</p>
+                <p class="perfil__level">Nivel: Hormiga</p>
+              </div>
+            </div>
+
+            <!-- Avatar y badge -->
+            <div class="perfil__avatar-wrapper">
+              <div class="perfil__avatar-container">
+                <img class="perfil__avatar" src="img/avatar.webp" alt="Avatar de Explorador Juan" />
+              </div>
+              <div class="perfil__badge">
+                <span class="perfil__badge-text">ANT</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estadísticas -->
+          <div class="perfil__stats">
+            <div class="perfil__stat">
+              <div class="perfil__stat-outer">
+                <div class="perfil__stat-inner">
+                  <p class="perfil__stat-label">
+                    Puntos Totales <br />
+                  </p>
+                  <p class="perfil__stat-value">150</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="perfil__stat">
+              <div class="perfil__stat-outer">
+                <div class="perfil__stat-inner">
+                  <p class="perfil__stat-label">
+                    Kilos <br />
+                    Reciclados
+                  </p>
+                  <p class="perfil__stat-value">52.3</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="perfil__stat">
+              <div class="perfil__stat-outer">
+                <div class="perfil__stat-inner">
+                  <p class="perfil__stat-label">
+                    Misiones <br />
+                  </p>
+                  <p class="perfil__stat-value">8</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección de insignias -->
+        <section class="perfil__badges">
+          <h2 class="perfil__badges-title">Mis insignias</h2>
+          <div class="perfil__badges-list">
+            <div class="perfil__badge-item">
+              <img
+                class="perfil__badge-img"
+                src="img/insignia.webp"
+                alt="Insignia 1"
+              />
+            </div>
+            <div class="perfil__badge-item">
+              <img
+                class="perfil__badge-img"
+                src="img/insignia.webp"
+                alt="Insignia 2"
+              />
+            </div>
+            <div class="perfil__badge-item">
+              <img
+                class="perfil__badge-img"
+                src="img/insignia.webp"
+                alt="Insignia 3"
+              />
+            </div>
+            <img
+              class="perfil__badge-item perfil__badge-item--more"
+              src="img/mas_insignia.webp"
+              alt="Más insignias"
+            />
+          </div>
+        </section>
+
+        <!-- Acciones -->
+        <nav class="perfil__actions">
+          <a href="#" class="perfil__button perfil__button--edit">
+            <span class="perfil__button-text">Editar Mi Perfil</span>
+          </a>
+          <a href="#" class="perfil__button perfil__button--settings">
+            <span class="perfil__button-icon">
+              <img class="perfil__button-img" src="img/configuracion.webp" alt="Ajustes" />
+            </span>
+          </a>
+        </nav>
+      </article>
+    </main>
+
+    <!-- Componente Navbar con BEM -->
+    <nav class="navbar navbar--fixed">
+      <a href="./index.html" class="navbar__item">
+        <img src="img/home.webp" alt="Inicio" class="navbar__icon" />
+        <span class="navbar__label">Inicio</span>
+      </a>
+      <a href="./logros.html" class="navbar__item">
+        <img src="img/trofeos.webp" alt="Logros" class="navbar__icon" />
+        <span class="navbar__label">Logros</span>
+      </a>
+      <a href="#" class="navbar__item navbar__item--active">
+        <img src="img/mochila.webp" alt="Perfil" class="navbar__icon" />
+        <span class="navbar__label">Perfil</span>
+      </a>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
